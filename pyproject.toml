@@ -1,0 +1,11 @@
+[project]
+name = "test-voice-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "livekit>=1.1.2",
+    "livekit-agents[deepgram,openai,silero]>=1.4.5",
+]
