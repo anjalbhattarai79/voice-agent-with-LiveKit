@@ -8,7 +8,7 @@ from livekit.agents import (
     function_tool,
     inference,
 )
-from livekit.plugins import silero
+from livekit.plugins import silero, elevenlabs
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -117,7 +117,16 @@ async def entrypoint(ctx: JobContext):
         # tts=cartesia.TTS(model="sonic-3", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
         stt=inference.STT("deepgram/nova-3", language="multi"),
         llm=inference.LLM("openai/gpt-4.1-mini"),
-        tts=inference.TTS("cartesia/sonic-3", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
+        
+        # tts=inference.TTS("cartesia/sonic-3", voice="2f251ac3-89a9-4a77-a452-704b474ccd01"),
+        # tts=inference.TTS("cartesia/sonic-3", voice="f786b574-daa5-4673-aa0c-cbe3e8534c02"),
+        
+        #Use of inference API
+        tts=inference.TTS("elevenlabs/eleven_flash_v2", voice="iP95p4xoKVk53GoZ742B"),
+        
+        #Use of SDK - instead \
+        # tts=elevenlabs.TTS(voice_id="UgBBYS2sOqTuMpoF3BR0"), 
+        
     )
 
     agent = Agent(

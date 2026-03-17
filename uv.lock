@@ -725,6 +725,9 @@ codecs = [
 deepgram = [
     { name = "livekit-plugins-deepgram" },
 ]
+elevenlabs = [
+    { name = "livekit-plugins-elevenlabs" },
+]
 images = [
     { name = "pillow" },
 ]
@@ -789,6 +792,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/b2/49/778424318c3bd5a1251449048024a46ad8f456a910a4f71c70b1e67eb050/livekit_plugins_deepgram-1.4.5.tar.gz", hash = "sha256:51762665b855360cdea586a59577c30fb17fa991689dd3fe1cb20fd43c089a2b", size = 16877, upload-time = "2026-03-11T06:45:40.838Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/81/e5/7657aa8f23a5e029748fb7576103da3c2dac4aee9cb1dff0950a09fecad3/livekit_plugins_deepgram-1.4.5-py3-none-any.whl", hash = "sha256:f2bcfc139c4a454e1beafba715ad57296d88f17e5215ec07a6e16491434fe87d", size = 21910, upload-time = "2026-03-11T06:45:39.074Z" },
+]
+
+[[package]]
+name = "livekit-plugins-elevenlabs"
+version = "1.4.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "livekit-agents", extra = ["codecs"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c5/ad/ffeaf43c820450a9e88eb00f4adb708e875bcc02e6c7c69cc7b0722a74af/livekit_plugins_elevenlabs-1.4.5.tar.gz", hash = "sha256:3e9d20a464ba7bfa684f015fa7f4b6575055e8d5a8f03ee7311e9abea16e2283", size = 17143, upload-time = "2026-03-11T06:45:42.784Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/64/ca/18322dcc6a4c0a50735d6c98f06273197ba2e0f79111fc2587ac43fca277/livekit_plugins_elevenlabs-1.4.5-py3-none-any.whl", hash = "sha256:bbc91d5dad30e9a45c7bb8dd70f70fd2446037e8b35926f57829a771a7732ca6", size = 19836, upload-time = "2026-03-11T06:45:41.6Z" },
 ]
 
 [[package]]
@@ -1617,14 +1632,14 @@ source = { virtual = "." }
 dependencies = [
     { name = "dotenv" },
     { name = "livekit" },
-    { name = "livekit-agents", extra = ["deepgram", "openai", "silero"] },
+    { name = "livekit-agents", extra = ["deepgram", "elevenlabs", "openai", "silero"] },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
-    { name = "livekit", specifier = ">=1.1.2" },
-    { name = "livekit-agents", extras = ["deepgram", "openai", "silero"], specifier = ">=1.4.5" },
+    { name = "livekit", extras = ["elevenlabs"], specifier = ">=1.1.2" },
+    { name = "livekit-agents", extras = ["deepgram", "elevenlabs", "openai", "silero"], specifier = "~=1.4" },
 ]
 
 [[package]]
