@@ -1,3 +1,6 @@
 .env
 .venv/
 __pycache__/
+
+# STT models (downloaded by sherpa-stt)
+stt/sherpa-stt/models/
